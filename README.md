@@ -8,9 +8,10 @@ This repository demos pumping audio from
 the default input device to the default output device in C99.
 
 There are three versions:
-one for [SDL 2](https://wiki.libsdl.org/SDL2/FrontPage),
-one for the [Simple API](https://freedesktop.org/software/pulseaudio/doxygen/simple.html) of PulseAudio,
-one for the [Asynchronous API](https://freedesktop.org/software/pulseaudio/doxygen/async.html) of PulseAudio.
+
+- one for [SDL 2](https://wiki.libsdl.org/SDL2/FrontPage),
+- one for the [Simple API](https://freedesktop.org/software/pulseaudio/doxygen/simple.html) of PulseAudio,
+- one for the [Asynchronous API](https://freedesktop.org/software/pulseaudio/doxygen/async.html) of PulseAudio.
 
 The code is Software Libre licensed under GPL v3 or later.
 
