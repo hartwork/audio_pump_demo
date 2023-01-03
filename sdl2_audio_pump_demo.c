@@ -39,8 +39,8 @@ int main() {
       .callback = NULL,
   };
 
-  SDL_AudioDeviceID output_device = SDL_OpenAudioDevice(
-      NULL, 0 /*iscapture*/, &output_spec_wanted, NULL, 0 /*allowed_changes*/);
+  SDL_AudioDeviceID output_device =
+      SDL_OpenAudioDevice(NULL, 0, &output_spec_wanted, NULL, 0);
   assert(output_device != 0);
 
   const SDL_AudioSpec input_spec_wanted = {
@@ -52,15 +52,15 @@ int main() {
       .userdata = (void *)(intptr_t)output_device,
   };
 
-  SDL_AudioDeviceID input_device = SDL_OpenAudioDevice(
-      NULL, 1 /*iscapture*/, &input_spec_wanted, NULL, 0 /*allowed_changes*/);
+  SDL_AudioDeviceID input_device =
+      SDL_OpenAudioDevice(NULL, 1, &input_spec_wanted, NULL, 0);
   assert(input_device != 0);
 
   fprintf(stderr, "Pumping from default input device to default output device, "
                   "press Ctrl+C to exit...\n");
 
-  SDL_PauseAudioDevice(output_device, 0 /*pause_on*/);
-  SDL_PauseAudioDevice(input_device, 0 /*pause_on*/);
+  SDL_PauseAudioDevice(output_device, 0);
+  SDL_PauseAudioDevice(input_device, 0);
 
   SDL_Event event;
   bool running = true;
