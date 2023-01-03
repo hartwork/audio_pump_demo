@@ -9,9 +9,12 @@ the default input device to the default output device in C99.
 
 There are three versions:
 
-- one for [SDL 2](https://wiki.libsdl.org/SDL2/FrontPage),
-- one for the [Simple API](https://freedesktop.org/software/pulseaudio/doxygen/simple.html) of PulseAudio,
-- one for the [Asynchronous API](https://freedesktop.org/software/pulseaudio/doxygen/async.html) of PulseAudio.
+- one for [SDL 2](https://wiki.libsdl.org/SDL2/FrontPage) —
+  [`sdl2_audio_pump_demo.c`](https://github.com/hartwork/audio_pump_demo/blob/master/sdl2_audio_pump_demo.c),
+- one for the [Simple API](https://freedesktop.org/software/pulseaudio/doxygen/simple.html) of PulseAudio —
+  [`pulseaudio_simple_pump_demo.c`](https://github.com/hartwork/audio_pump_demo/blob/master/pulseaudio_simple_pump_demo.c),
+- one for the [Asynchronous API](https://freedesktop.org/software/pulseaudio/doxygen/async.html) of PulseAudio —
+  [`pulseaudio_async_pump_demo.c`](https://github.com/hartwork/audio_pump_demo/blob/master/pulseaudio_async_pump_demo.c).
 
 The code is Software Libre licensed under GPL v3 or later.
 
