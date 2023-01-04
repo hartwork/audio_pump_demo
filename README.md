@@ -4,10 +4,13 @@
 
 # Audio pump demo (for both PulseAudio and SDL 2)
 
-This repository demos pumping audio from
-the default input device to the default output device in C99.
+This repository demos pumping audio
+from the default input device (e.g. a microphone)
+to the default output device (e.g. headphones/speakers)
+in C99.
+In other words: this demo records audio, and it plays back audio.
 
-There are three versions:
+There are three editions:
 
 - one for [SDL 2](https://wiki.libsdl.org/SDL2/FrontPage) —
   [`sdl2_audio_pump_demo.c`](https://github.com/hartwork/audio_pump_demo/blob/master/sdl2_audio_pump_demo.c),
