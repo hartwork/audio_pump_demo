@@ -1,6 +1,10 @@
 # Copyright (c) 2023 Sebastian Pipping <sebastian@pipping.org>
 # Licensed under GPL v3 or later
 
+PREFIX = /usr/local
+BINDIR = $(PREFIX)/bin
+INSTALL = install
+
 CFLAGS += -Wall -Wextra -std=c99 -pedantic
 
 PULSE_CFLAGS := $(shell pkg-config --cflags libpulse)
@@ -32,3 +36,8 @@ pulseaudio_simple_pump_demo: pulseaudio_simple_pump_demo.c
 
 sdl2_audio_pump_demo: sdl2_audio_pump_demo.c
 	$(CC) $< -o $@ $(SDL2_CFLAGS) $(CFLAGS) $(SDL2_LDFLAGS) $(LDFLAGS)
+
+.PHONY: install
+install: $(ALL_APPS)
+	$(INSTALL) -d $(DESTDIR)$(BINDIR)
+	$(INSTALL) -m 0755 -t $(DESTDIR)$(BINDIR) $(ALL_APPS)
