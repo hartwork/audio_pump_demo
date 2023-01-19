@@ -7,6 +7,9 @@ INSTALL = install
 
 CFLAGS += -Wall -Wextra -std=c99 -pedantic
 
+PORTAUDIO_CFLAGS := $(shell pkg-config --cflags portaudio-2.0)
+PORTAUDIO_LDFLAGS := $(shell pkg-config --libs portaudio-2.0)
+
 PULSE_CFLAGS := $(shell pkg-config --cflags libpulse)
 PULSE_LDFLAGS := $(shell pkg-config --libs libpulse)
 
@@ -17,6 +20,7 @@ SDL2_CFLAGS := $(shell pkg-config --cflags sdl2)
 SDL2_LDFLAGS := $(shell pkg-config --libs sdl2)
 
 ALL_APPS = \
+	portaudio_async_pump_demo \
 	pulseaudio_async_pump_demo \
 	pulseaudio_simple_pump_demo \
 	sdl2_audio_pump_demo
@@ -27,6 +31,9 @@ all: $(ALL_APPS)
 .PHONY: clean
 clean:
 	$(RM) $(ALL_APPS)
+
+portaudio_async_pump_demo: portaudio_async_pump_demo.c
+	$(CC) $< -o $@ $(PORTAUDIO_CFLAGS) $(CFLAGS) $(PORTAUDIO_LDFLAGS) $(LDFLAGS)
 
 pulseaudio_async_pump_demo: pulseaudio_async_pump_demo.c
 	$(CC) $< -o $@ $(PULSE_CFLAGS) $(CFLAGS) $(PULSE_LDFLAGS) $(LDFLAGS)
