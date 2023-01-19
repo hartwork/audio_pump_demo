@@ -24,7 +24,8 @@ jobs:
         sudo apt-get install --yes --no-install-recommends -V \
             build-essential \
             libpulse-dev \
-            libsdl2-dev
+            libsdl2-dev \
+            portaudio19-dev
 
     - name: Build
       run: |-
